@@ -4,4 +4,5 @@ for i in {0..9}
 do
 	echo "Best School"
 done
+echo '-n'
 export i
