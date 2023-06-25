@@ -1,3 +1,11 @@
-#!/usr/bin/env bash
-# Create an SSH key pair
-ssh-keygen -f school -b 4096 -N "betty" 
+#!/bin/bash
+
+key_name="school"
+key_bits="4096"
+passphrase="betty"
+
+# Generate the private key
+openssl genrsa -aes256 -passout pass:"$passphrase" -out "$key_name".key "$key_bits"
+
+# Generate the public key from the private key
+openssl rsa -in "$key_name".key -passin pass:"$passphrase" -pubout -out "$key_name".pub
