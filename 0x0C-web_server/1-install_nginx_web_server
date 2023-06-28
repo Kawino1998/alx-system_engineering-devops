@@ -3,5 +3,10 @@
 apt-get -y update
 apt-get -y install nginx
 touch /var/www/html/index.html
-echo 'Hello World!' > /var/www/html/index.html
+echo '<!DOCTYPE html>
+<html>
+        <body>
+                <p>Hello World!</p>
+        </body>
+</html>' > /var/www/html/index.html
 service nginx restart
